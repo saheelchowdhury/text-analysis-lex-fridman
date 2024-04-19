@@ -1,7 +1,7 @@
 # text-analysis-lex-fridman
 ML - Podcast Transcript Analysis with Python - Lex Fridman 
 
-## Lex Fridman Podcast Transcript
+## Lex Fridman Podcast Transcript Analysis with Python
 
 ## Importing libraries
 ``
@@ -16,3 +16,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
     for filename in filenames:
         print(os.path.join(dirname, filename))
 `` 
+## This dataset features discussions with thought leaders from diverse fields such as technology, science, philosophy, and art, this dataset offers a treasure trove of insights and wisdom. Exploring the nuances of each conversation can uncover emerging trends. Exploring some concepts below: 
+``
+data=pd.read_csv('/kaggle/input/lex-fridman-podcast-transcript/podcastdata_dataset.csv')
+``
