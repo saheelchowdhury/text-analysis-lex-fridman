@@ -1,7 +1,6 @@
-# text-analysis-lex-fridman
-ML - Podcast Transcript Analysis with Python - Lex Fridman 
+# ML - Podcast Transcript Analysis with Python - Lex Fridman 
 
-## Lex Fridman Podcast Transcript Analysis with Python
+## Unlocking Knowledge Through Text Analysis 
 
 ## Importing libraries
 ``
