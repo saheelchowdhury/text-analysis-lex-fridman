@@ -102,6 +102,27 @@ print(model.wv.similarity('war', 'capitalism'))
 ``
 <img width="563" alt="Screenshot 2024-04-19 at 1 24 18 AM" src="https://github.com/saheelchowdhury/text-analysis-lex-fridman/assets/153671296/dc4abe53-5e69-46c8-92eb-b512070d7270">
 
+## War is a possible topic of discussion on the show when the words 'race' & 'religion' are used (0.32 cosine similarity) 
+
+``
+v_war=model.wv['war']
+v_race = model.wv['race']
+v_religion = model.wv['religion']
+created_st = v_race  + v_religion
+np.dot(created_st, v_war)/(np.linalg.norm(created_st)* np.linalg.norm(v_war))
+``
+## 0.3267056
+
+## Nuclear war is a possible 'issue' discussed while talking about 'Russia' (high cosine similarity of .442) 
+
+``
+v_russia = model.wv['russia']
+v_issues = model.wv['issues']
+v_nuclear = model.wv['nuclear']
+created_nuclear = v_russia + v_issues
+np.dot(created_nuclear, v_nuclear)/(np.linalg.norm(created_nuclear)* np.linalg.norm(v_nuclear))
+``
+## 0.44290972
 
 
 
