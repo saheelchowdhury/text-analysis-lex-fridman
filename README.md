@@ -8,7 +8,7 @@ ML - Podcast Transcript Analysis with Python - Lex Fridman
 import numpy as np 
 import pandas as pd 
 ``
-# Input data files are available in the read-only "../input/" directory
+## Input data files are available in the read-only "../input/" directory
 
 ``
 import os
