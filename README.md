@@ -70,13 +70,39 @@ model=Word2Vec.load('w2v_dr.w2v')
 vocab = model.wv.index_to_key
 ``
 
-# Testing - Similar Words to 'drugs'
+## Testing - Similar Words to 'drugs'
 ``
 model.wv.most_similar('drugs', topn=10)
 ``
 <img width="392" alt="Screenshot 2024-04-19 at 1 21 43 AM" src="https://github.com/saheelchowdhury/text-analysis-lex-fridman/assets/153671296/5a9210ab-75b7-4f06-92d2-64753495ab39">
 
-# Testing - Similar Words to 'race'
+## Testing - Similar Words to 'race'
 ``
 model.wv.most_similar('race', topn=10)
 ``
+
+## Exploring the relationship regarding the 'interesting' exclamation with regards to topic names
+
+``
+print(model.wv.similarity('rich', 'interesting'))
+print(model.wv.similarity('artificial', 'interesting'))
+print(model.wv.similarity('psychology', 'interesting'))
+print(model.wv.similarity('race', 'interesting'))
+``
+
+<img width="514" alt="Screenshot 2024-04-19 at 1 23 37 AM" src="https://github.com/saheelchowdhury/text-analysis-lex-fridman/assets/153671296/5e67ce15-e6bd-4184-9cc5-cf810c98f25e">
+
+## Finding similar sentiments/topics related to capitalism - related discussions on the podcast
+
+``
+print(model.wv.similarity('mistake', 'capitalism'))
+print(model.wv.similarity('race', 'capitalism'))
+print(model.wv.similarity('global', 'capitalism'))
+print(model.wv.similarity('war', 'capitalism'))
+``
+<img width="563" alt="Screenshot 2024-04-19 at 1 24 18 AM" src="https://github.com/saheelchowdhury/text-analysis-lex-fridman/assets/153671296/dc4abe53-5e69-46c8-92eb-b512070d7270">
+
+
+
+
+
