@@ -33,7 +33,6 @@ from gensim.models.word2vec import Word2Vec
 ``
 
 
-
 # Data Cleaning
 
 ``
@@ -42,8 +41,6 @@ from sklearn import feature_extraction
 stop_words = feature_extraction.text.ENGLISH_STOP_WORDS
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
-``
-``
 def preprocess(text):
   text = text.lower() #lowercase
   text = re.sub(r'[^\w\s]', '', text) 
@@ -56,4 +53,30 @@ def preprocess(text):
   return(text)
 ``
 
+## Picking the text column
+``
+data['review_processed']=data['text'].apply(lambda x:preprocess(x))
+data['review_processed']=data['review_processed'].apply(lambda x:x.split())
+model = Word2Vec(sentences=data['review_processed'].tolist(), vector_size=100, sg=1,min_count=5,window=5,workers=50,seed=10,epochs=50)
+``
+## Saving model
+``
+model.save('w2v_dr.w2v')
+``
+``
+model=Word2Vec.load('w2v_dr.w2v')
+``
+``
+vocab = model.wv.index_to_key
+``
 
+# Testing - Similar Words to 'drugs'
+``
+model.wv.most_similar('drugs', topn=10)
+``
+<img width="392" alt="Screenshot 2024-04-19 at 1 21 43 AM" src="https://github.com/saheelchowdhury/text-analysis-lex-fridman/assets/153671296/5a9210ab-75b7-4f06-92d2-64753495ab39">
+
+# Testing - Similar Words to 'race'
+``
+model.wv.most_similar('race', topn=10)
+``
