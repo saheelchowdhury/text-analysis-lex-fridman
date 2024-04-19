@@ -42,14 +42,16 @@ from sklearn import feature_extraction
 stop_words = feature_extraction.text.ENGLISH_STOP_WORDS
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
+``
+``
 def preprocess(text):
   text = text.lower() #lowercase
-  text = re.sub(r'[^\w\s]', '', text) #remove punctuations
-  text = re.sub(r'\d+', '', text) #remove numbers
-  text = " ".join(text.split()) #stripWhitespace
+  text = re.sub(r'[^\w\s]', '', text) 
+  text = re.sub(r'\d+', '', text) 
+  text = " ".join(text.split()) 
   text = text.split()
-  text = [x for x in text if x not in stop_words] #remove stopwords
-  text = [x for x in text if x not in ["dr", "doctor"]] #remove task specific stopwords
+  text = [x for x in text if x not in stop_words] 
+  text = [x for x in text if x not in ["dr", "doctor"]] 
   text = " ".join(text)
   return(text)
 ``
