@@ -74,6 +74,7 @@ vocab = model.wv.index_to_key
 ``
 model.wv.most_similar('drugs', topn=10)
 ``
+
 <img width="392" alt="Screenshot 2024-04-19 at 1 21 43 AM" src="https://github.com/saheelchowdhury/text-analysis-lex-fridman/assets/153671296/5a9210ab-75b7-4f06-92d2-64753495ab39">
 
 ## Testing - Similar Words to 'race'
