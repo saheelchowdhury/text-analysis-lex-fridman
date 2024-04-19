@@ -20,3 +20,7 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 ``
 data=pd.read_csv('/kaggle/input/lex-fridman-podcast-transcript/podcastdata_dataset.csv')
 ``
+``
+data.head()
+``
+<img width="581" alt="Screenshot 2024-04-19 at 1 15 12 AM" src="https://github.com/saheelchowdhury/text-analysis-lex-fridman/assets/153671296/efc4f727-d481-4edb-b6f3-83f0cc196dd1">
